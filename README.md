@@ -19,4 +19,4 @@ Features
 6. Logout functionality
 7. filter countries based on their contitent
 8. filter countries based on Alphabet A-Z
-9. filter countries based on their subregions like India is in SoutAsia
+9. filter countries based on their subregions like India is in Southern Asia
