@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h3>User Registration</h3>
+
+    <!-- Signup or Registration form -->
+    <form ng-submit="signup()">
+      
+      <!-- username -->
+      <label for="name">Username:</label><br>
+      <input type="name" class="inp" placeholder="Name" ng-model="user.name" required><br>
+      
+      <!-- User Email -->
+      <label for="email">User Email:</label><br>
+      <input type="email"class="inp" placeholder="Email" ng-model="user.email" required><br>
+      
+      <!-- user password -->
+      <label for="password">User Password:</label><br>
+      <input type="password"class="inp" placeholder="Password" ng-model="user.password" required><br>
+      
+      <!-- signup Button -->
+      <button type="submit" class="btn">Signup</button>
+     
+    </form>
+
+    <!--Hyperlink and route the login page  -->
+    <a href="#/login">Login, if you have an account.</a>
+  </div>

@@ -1,0 +1,20 @@
+
+  body {
+    text-align: center;
+    background-image: url("vishwa.jpg");
+  }
+  .container {
+    background-color: rgb(212, 214, 213);
+    width: 80vw;
+    max-width: 20em;
+    padding: 2em 2.5em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 0.62em;
+    box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
+  }
+  
+  
+  

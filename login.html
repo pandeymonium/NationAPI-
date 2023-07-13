@@ -1,0 +1,22 @@
+
+<div class="container">
+    <h2>User Login</h2>
+
+    <!-- Login Form -->
+  <form ng-submit="login()">
+
+    <!-- user email -->
+    <label for="email">User Email:</label><br>
+    <input type="email" class="inp" placeholder="Email" ng-model="user.email" required><br>
+
+    <!-- user password -->
+    <label for="password">User Password:</label><br>
+    <input type="password" class="inp" placeholder="Password" ng-model="user.password" required><br>
+
+    <!-- user button -->
+    <button type="submit" class="btn">Login</button>
+  </form>
+
+  <!-- hyperlink and route to registration page -->
+  <a href="#/signup">Create account</a>
+  </div>

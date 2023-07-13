@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>Country</title>
+
+  <!-- css file  for dashboard -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <style>
+    .country-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #logoutt {
+      display: flex;
+      width: 100%;
+      justify-content: end;
+      padding-right: 50px;
+    }
+
+    .country-box {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      width: 385px;
+      height: 200px;
+      border: 5px solid black;
+      margin: 10px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    .country-flag {
+      width: 75px;
+      height: 45px;
+      margin-bottom: 5px;
+    }
+
+    .country-details {
+      text-align: center;
+    }
+
+    .btnmid {
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    body {
+      background-image: url("wUni.jpg");
+    }
+  </style>
+</head>
+
+<body ng-controller="myController">
+  
+  <div id="hed">
+    <h1>Explore the World</h1>
+
+    <!-- logout button -->
+    <div id="logoutt" ng-click="logout()">
+      <button>
+        logout
+      </button>
+    </div>
+  </div>
+
+  <!-- Dropdown for A-Z -->
+  <div class="btnmid">
+    <select ng-model="selectedAlphabet" ng-change="filterCountries()">
+      <option value="">All</option>
+      <option ng-repeat="alphabet in alphabets" value="{{ alphabet }}">{{ alphabet }}</option>
+    </select>
+
+    <!-- Dropdown for Continents -->
+    <select ng-model="selectedRegion" ng-change="filterCountries()">
+      <option value="">All Regions</option>
+      <option ng-repeat="region in regions" value="{{ region }}">{{ region }}</option>
+    </select>
+
+    <!-- Dropdown for subregions -->
+    <select ng-model="selectedSubregion" ng-change="filterCountries()">
+      <option value="">All Subregions</option>
+      <option ng-repeat="subregion in subregions" value="{{ subregion }}">{{ subregion }}</option>
+    </select>
+
+    <!-- Search bar  -->
+    <input type="text" ng-model="searchQuery" placeholder="Search" />
+
+    <!-- Radio button for country and capital -->
+    <label>
+      <input type="radio" ng-model="searchType" value="country" ng-change="filterCountries()" /> Country
+    </label>
+
+    <label>
+      <input type="radio" ng-model="searchType" value="capital" ng-change="filterCountries()" /> Capital
+    </label>
+
+    <!-- Search Button -->
+    <button ng-click="filterCountries()">Search</button>
+  </div>
+
+  <div class="country-container">
+    <div class="country-box" ng-repeat="country in filteredCountries">
+      <img class="country-flag" ng-src="{{ country.flags.png }}" alt="{{ country.name.common }}">
+      <div class="country-details">
+        
+        <h3>{{ country.name.common }}</h3>
+        <p><strong>Capital:</strong> {{ getCapital(country) }}</p>
+        <p><strong>Language:</strong> {{ getLanguageNames(country) }}</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
